@@ -304,10 +304,10 @@ void driveUpdataTask01(void *argument)
     cct(brightness,color_Temperature,&cold_Out,&warm_Out);
 
     //将冷暖输出进行格式转化并赋四路电流数值（这里假设第一路是冷色温）
-    first_electric_current=(cold_Out*1000*0.5)+0.5;//+0.5实现float类型转换为uint16_t时四舍五入
-    second_electric_current=(cold_Out*1000*0.5)+0.5;
-    third_electric_current=(warm_Out*1000*0.5)+0.5;
-    fourth_electric_current=(warm_Out*1000*0.5)+0.5;
+    first_electric_current=(cold_Out*1000)+0.5;//+0.5实现float类型转换为uint16_t时四舍五入
+    second_electric_current=(cold_Out*1000)+0.5;
+    third_electric_current=(warm_Out*1000)+0.5;
+    fourth_electric_current=(warm_Out*1000)+0.5;
 
     //安全检查
     //对四路电流输出值进行限幅
